@@ -10,6 +10,7 @@ import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { ApiError } from "../types/responseType";
+import ShowCredentialModal from "../components/ui/modal/ShowCredentialModal";
 
 const Login = () => {
   const [login] = useLoginMutation();
@@ -65,6 +66,15 @@ const Login = () => {
               Register
             </Link>
           </p>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginTop: "20px",
+          }}
+        >
+          <ShowCredentialModal />
         </div>
       </GForm>
     </Row>

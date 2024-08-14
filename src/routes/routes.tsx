@@ -7,6 +7,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import ProtectedRoute from "../components/layout/ProtectedRoute";
 import Coupon from "../pages/Coupon";
+import Overview from "../pages/Overview";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,14 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
+        element: (
+          <ProtectedRoute requiredRoles={["manager", "seller"]}>
+            <Overview />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/gift-inventory",
         element: (
           <ProtectedRoute requiredRoles={["manager", "seller"]}>
             <GiftInventory />

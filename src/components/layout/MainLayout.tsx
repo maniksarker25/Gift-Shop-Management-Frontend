@@ -13,7 +13,11 @@ const { Header, Content, Sider } = Layout;
 const sellerItems: MenuProps["items"] = [
   {
     key: "1",
-    label: <NavLink to={"/"}>Gift Inventory</NavLink>,
+    label: <NavLink to={"/"}>Overview</NavLink>,
+  },
+  {
+    key: "2",
+    label: <NavLink to={"/gift-inventory"}>Gift Inventory</NavLink>,
   },
   {
     key: "3",
@@ -23,18 +27,22 @@ const sellerItems: MenuProps["items"] = [
 const managerItems: MenuProps["items"] = [
   {
     key: "1",
-    label: <NavLink to={"/"}>Gift Inventory</NavLink>,
+    label: <NavLink to={"/"}>Overview</NavLink>,
   },
   {
     key: "2",
-    label: <NavLink to={"add-gift"}>Add Gift</NavLink>,
+    label: <NavLink to={"/gift-inventory"}>Gift Inventory</NavLink>,
   },
   {
     key: "3",
-    label: <NavLink to={"sale-history"}>Sale History</NavLink>,
+    label: <NavLink to={"add-gift"}>Add Gift</NavLink>,
   },
   {
     key: "4",
+    label: <NavLink to={"sale-history"}>Sale History</NavLink>,
+  },
+  {
+    key: "5",
     label: <NavLink to={"coupon"}>Coupon</NavLink>,
   },
 ];
