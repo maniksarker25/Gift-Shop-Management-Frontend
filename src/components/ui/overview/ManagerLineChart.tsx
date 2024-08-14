@@ -21,7 +21,7 @@ const ManagerLineChart = () => {
     setSelectedValue(value);
   };
   return (
-    <div className="lg:w-1/2">
+    <div className="lg:w-1/2 -ml-14">
       <div className="flex justify-between mb-6">
         <h2 className="text-xl ml-12">Sales Overview</h2>
         <Select

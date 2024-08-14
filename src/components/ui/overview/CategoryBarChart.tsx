@@ -42,9 +42,9 @@ const CategoryBarChart = ({
   categoryBarChartData: any;
 }) => {
   return (
-    <div className="lg:w-1/2">
-      <h2 className="text-xl mb-5 ml-12">Product Category Overview</h2>
-      <ResponsiveContainer width="100%" height={400}>
+    <div className="lg:w-1/2 -ml-14">
+      <h2 className="text-xl mb-4 ml-12">Product Category Overview</h2>
+      <ResponsiveContainer width="100%" height={395}>
         <BarChart
           width={500}
           height={300}

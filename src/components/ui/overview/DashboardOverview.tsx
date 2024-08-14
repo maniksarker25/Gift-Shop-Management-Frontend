@@ -14,7 +14,7 @@ const DashboardOverview = () => {
         Dashboard Overview
       </h2>
       <div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  gap-16 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  gap-4 lg:gap-16 mb-16">
           <div style={{ backgroundColor: "#F9FAFC" }}>
             <div
               style={{
@@ -172,7 +172,7 @@ const DashboardOverview = () => {
             </div>
           </div>
         </div>
-        <div className="flex justify-between gap-12">
+        <div className="lg:flex justify-between gap-12">
           <ManagerLineChart />
           <CategoryBarChart
             categoryBarChartData={metaData?.categoryBarChartData}
