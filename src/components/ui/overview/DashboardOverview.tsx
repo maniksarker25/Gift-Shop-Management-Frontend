@@ -6,6 +6,7 @@ import CategoryBarChart from "./CategoryBarChart";
 import ManagerLineChart from "./ManagerLineChart";
 import ManagerOverview from "./ManagerOverview";
 import SellerOverview from "./SellerOverview";
+import ThemePieChart from "./ThemePieChart";
 
 const DashboardOverview = () => {
   const token = useAppSelector(useCurrentToken);
@@ -192,6 +193,9 @@ const DashboardOverview = () => {
           <CategoryBarChart
             categoryBarChartData={metaData?.categoryBarChartData}
           />
+          {(user as TUser)?.role === "seller" && (
+            <ThemePieChart metaData={metaData} />
+          )}
         </div>
       </div>
     </div>
