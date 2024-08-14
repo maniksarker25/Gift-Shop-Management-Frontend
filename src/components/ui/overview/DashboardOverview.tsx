@@ -1,8 +1,18 @@
+import { TUser, useCurrentToken } from "../../../redux/features/auth/authSlice";
 import { useGetMetaDataQuery } from "../../../redux/features/meta/metaApi";
+import { useAppSelector } from "../../../redux/hooks";
+import { verifyToken } from "../../../utils/verifyToken";
 import CategoryBarChart from "./CategoryBarChart";
 import ManagerLineChart from "./ManagerLineChart";
+import ManagerOverview from "./ManagerOverview";
+import SellerOverview from "./SellerOverview";
 
 const DashboardOverview = () => {
+  const token = useAppSelector(useCurrentToken);
+  let user;
+  if (token) {
+    user = verifyToken(token);
+  }
   const { data } = useGetMetaDataQuery(undefined);
 
   const metaData = data?.data;
@@ -14,7 +24,7 @@ const DashboardOverview = () => {
         Dashboard Overview
       </h2>
       <div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  gap-4 lg:gap-16 mb-16">
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  gap-4 lg:gap-16 mb-16">
           <div style={{ backgroundColor: "#F9FAFC" }}>
             <div
               style={{
@@ -171,9 +181,14 @@ const DashboardOverview = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
+        {(user as TUser).role === "manager" ? (
+          <ManagerOverview metaData={metaData} />
+        ) : (
+          <SellerOverview metaData={metaData} />
+        )}
         <div className="lg:flex justify-between gap-12">
-          <ManagerLineChart />
+          {(user as TUser)?.role === "manager" && <ManagerLineChart />}
           <CategoryBarChart
             categoryBarChartData={metaData?.categoryBarChartData}
           />
