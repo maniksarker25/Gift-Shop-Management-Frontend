@@ -26,6 +26,7 @@ const ShowCredentialModal = () => {
         toast.success("Copied successfully");
       })
       .catch((err: any) => {
+        console.log(err);
         toast.error("Failed to copy");
       });
   };

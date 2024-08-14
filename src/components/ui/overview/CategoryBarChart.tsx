@@ -13,12 +13,6 @@ import {
 
 const colors = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "red", "pink"];
 
-const data = [
-  { _id: "Home decor", count: 9 },
-  { _id: "Accessories", count: 1 },
-  { _id: "Gadget", count: 6 },
-];
-
 const getPath = (x: any, y: any, width: any, height: any) => {
   return `M${x},${y + height}C${x + width / 3},${y + height} ${x + width / 2},${
     y + height / 3
@@ -67,6 +61,7 @@ const CategoryBarChart = ({
           >
             {categoryBarChartData?.map((entry: any, index: number) => (
               <Cell
+                name={entry._id}
                 key={`cell-${index}`}
                 fill={colors[index % colors.length]}
               />
