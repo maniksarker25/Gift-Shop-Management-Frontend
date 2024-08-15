@@ -1,3 +1,4 @@
+// types
 export type ApiError = {
   status: number;
   data: {
